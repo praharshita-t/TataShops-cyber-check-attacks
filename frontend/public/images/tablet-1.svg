@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#f0f4f8"/>
+  <rect x="45" y="35" width="110" height="130" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+  <rect x="52" y="45" width="96" height="110" rx="4" fill="#0284c7"/>
+  <circle cx="100" cy="40" r="1.5" fill="#94a3b8"/>
+  <line x1="150" y1="50" x2="165" y2="140" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+  <text x="100" y="182" text-anchor="middle" font-size="10" fill="#64748b" font-family="sans-serif">SmartTab X10</text>
+</svg>

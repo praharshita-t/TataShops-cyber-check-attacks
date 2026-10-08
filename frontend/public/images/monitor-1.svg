@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#f0f4f8"/>
+  <rect x="25" y="45" width="150" height="90" rx="4" fill="#0f172a" stroke="#64748b" stroke-width="3"/>
+  <rect x="30" y="50" width="140" height="80" fill="#1e293b"/>
+  <path d="M40 110 L70 80 L100 100 L130 70 L160 95" stroke="#38bdf8" stroke-width="2" fill="none"/>
+  <rect x="95" y="135" width="10" height="20" fill="#64748b"/>
+  <path d="M75 155 H125" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
+  <text x="100" y="175" text-anchor="middle" font-size="10" fill="#64748b" font-family="sans-serif">VisionView 24</text>
+</svg>

@@ -1,0 +1,331 @@
+/* =============================================
+   TataShops — Global Styles & Design Tokens
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Paytone+One&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rubik+Dirt&family=Syne:wght@700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Core Color Palette */
+  --color-deep-teal: #236F73;
+  --color-dark-forest: #00563F;
+  --color-soft-mint: #68C2A4;
+  --color-soft-mint-light: #EBF7F2;
+  --color-warm-orange: #FF9829;
+  --color-burnt-orange: #C65308;
+
+  /* Surfaces & Backgrounds */
+  --color-bg: #F9FBFA;
+  --color-bg-alt: #F0F5F2;
+  --color-surface: #FFFFFF;
+  --color-border: #DDE7E2;
+  --color-border-hover: #68C2A4;
+
+  /* Neutrals & Body Text */
+  --color-text: #192421;
+  --color-text-secondary: #475852;
+  --color-text-muted: #788C84;
+
+  /* Functional Roles */
+  --color-accent: var(--color-deep-teal);
+  --color-accent-hover: #1b575a;
+  --color-primary: var(--color-dark-forest);
+  --color-primary-hover: #004432;
+  --color-cta: var(--color-warm-orange);
+  --color-cta-hover: var(--color-burnt-orange);
+  --color-success: var(--color-dark-forest);
+  --color-warning: var(--color-warm-orange);
+  --color-danger: var(--color-burnt-orange);
+  --color-danger-hover: #9c3f04;
+
+  /* Typography */
+  --font-display: 'Paytone One', 'Syne', 'Bebas Neue', sans-serif;
+  --font-heading: 'Paytone One', 'Syne', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.8125rem;
+  --fs-base: 0.9375rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.25rem;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Shapes & Polish */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 2px 4px rgba(25, 36, 33, 0.04);
+  --shadow-md: 0 4px 12px rgba(25, 36, 33, 0.08);
+  --max-width: 1200px;
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-deep-teal);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+}
+
+/* ---------- Utility Classes ---------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  color: var(--color-deep-teal);
+  margin-bottom: var(--space-xl);
+  letter-spacing: -0.01em;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 42px;
+  height: 3px;
+  background: var(--color-soft-mint);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: var(--fs-base);
+  color: var(--color-text-secondary);
+  margin-top: -0.5rem;
+  margin-bottom: var(--space-xl);
+}
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge--success {
+  background: var(--color-soft-mint-light);
+  color: var(--color-dark-forest);
+  border: 1px solid var(--color-soft-mint);
+}
+
+.badge--warning {
+  background: #FFF5EA;
+  color: var(--color-burnt-orange);
+  border: 1px solid var(--color-warm-orange);
+}
+
+.badge--danger {
+  background: #FDF2EB;
+  color: var(--color-burnt-orange);
+  border: 1px solid var(--color-burnt-orange);
+}
+
+.badge--info {
+  background: var(--color-soft-mint-light);
+  color: var(--color-deep-teal);
+  border: 1px solid var(--color-soft-mint);
+}
+
+/* ---------- Star Ratings ---------- */
+.stars {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--color-warm-orange);
+  font-size: var(--fs-sm);
+}
+
+.stars .empty {
+  color: var(--color-border);
+}
+
+/* ---------- Toast Notifications ---------- */
+.toast {
+  position: fixed;
+  top: 80px;
+  right: 24px;
+  background: var(--color-deep-teal);
+  color: #FFFFFF;
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+  border-left: 4px solid var(--color-warm-orange);
+  animation: slideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- App Layout ---------- */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.app__main {
+  flex: 1;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-2xl) 0;
+  margin-top: auto;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  text-align: center;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--color-deep-teal);
+  letter-spacing: -0.01em;
+}
+
+.footer__logo svg {
+  color: var(--color-warm-orange);
+}
+
+.footer__disclaimer {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  max-width: 440px;
+}
+
+.footer__links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.footer__links a,
+.footer__link-disabled {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: color var(--transition);
+}
+
+.footer__links a:hover {
+  color: var(--color-burnt-orange);
+}
+
+.footer__link-disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.footer__copy {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .section-title {
+    font-size: var(--fs-xl);
+  }
+}

@@ -1,0 +1,226 @@
+/* =============================================
+   TataShops — Home Page
+   ============================================= */
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--color-bg-alt);
+  padding: 4.5rem 0;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(104, 194, 164, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 152, 41, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__content {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--color-deep-teal);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.hero__desc {
+  font-size: var(--fs-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+  line-height: 1.65;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- Featured Products ---------- */
+.featured {
+  padding: var(--space-3xl) 0;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+/* ---------- Categories ---------- */
+.categories {
+  padding: var(--space-3xl) 0;
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.categories__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+}
+
+.category-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  transition: all var(--transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-card:hover {
+  border-color: var(--color-soft-mint);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(35, 111, 115, 0.08);
+}
+
+.category-card__icon {
+  font-size: 2.25rem;
+  margin-bottom: var(--space-sm);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-soft-mint-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+
+.category-card:hover .category-card__icon {
+  background: rgba(104, 194, 164, 0.35);
+}
+
+.category-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--color-deep-teal);
+}
+
+.category-card__count {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+  font-weight: 500;
+}
+
+/* ---------- Trust Section ---------- */
+.trust {
+  padding: var(--space-3xl) 0;
+}
+
+.trust__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  text-align: center;
+}
+
+.trust__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.trust__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-soft-mint-light);
+  color: var(--color-dark-forest);
+  border: 1px solid var(--color-soft-mint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: var(--space-xs);
+}
+
+.trust__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--color-deep-teal);
+}
+
+.trust__desc {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  max-width: 260px;
+  line-height: 1.5;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__desc {
+    font-size: var(--fs-base);
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}

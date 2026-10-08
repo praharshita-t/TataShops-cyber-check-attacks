@@ -1,0 +1,201 @@
+/* =============================================
+   TataShops — Cart Page
+   ============================================= */
+
+.cart-page {
+  padding: var(--space-2xl) 0 var(--space-3xl);
+}
+
+.cart-page__empty {
+  text-align: center;
+  padding: var(--space-3xl) 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cart-page__empty-icon {
+  font-size: 3.5rem;
+  margin-bottom: var(--space-md);
+  color: var(--color-soft-mint);
+}
+
+.cart-page__empty p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+  font-size: var(--fs-md);
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+/* Items List */
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.cart-item {
+  display: flex;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  transition: all var(--transition);
+}
+
+.cart-item:hover {
+  border-color: var(--color-soft-mint);
+}
+
+.cart-item__image {
+  width: 100px;
+  height: 100px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.cart-item__image img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.cart-item__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.cart-item__name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--fs-md);
+  color: var(--color-deep-teal);
+}
+
+.cart-item__category {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.cart-item__price {
+  font-size: var(--fs-base);
+  font-weight: 800;
+  color: var(--color-warm-orange);
+}
+
+.cart-item__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: auto;
+}
+
+.cart-item__remove {
+  background: none;
+  border: none;
+  font-size: var(--fs-xs);
+  color: var(--color-burnt-orange);
+  font-weight: 600;
+  transition: all var(--transition);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.cart-item__remove:hover {
+  background: #FFF0E8;
+  color: #a14104;
+}
+
+/* Summary Sidebar */
+.cart-summary {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  background: var(--color-surface);
+  position: sticky;
+  top: 90px;
+  box-shadow: 0 4px 12px rgba(35, 111, 115, 0.05);
+}
+
+.cart-summary__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--color-deep-teal);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cart-summary__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+  font-weight: 500;
+}
+
+.cart-summary__total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-warm-orange);
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1.5px solid var(--color-border);
+}
+
+.cart-summary__checkout {
+  margin-top: var(--space-lg);
+}
+
+.cart-summary__checkout .btn {
+  width: 100%;
+}
+
+.cart-summary__note {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: var(--space-md);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item__image {
+    width: 80px;
+    height: 80px;
+  }
+}

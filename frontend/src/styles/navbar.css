@@ -1,0 +1,206 @@
+/* =============================================
+   TataShops — Navbar
+   ============================================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-deep-teal);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(35, 111, 115, 0.15);
+}
+
+.navbar__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+/* Logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  transition: opacity var(--transition);
+}
+
+.navbar__logo:hover {
+  opacity: 0.95;
+}
+
+.navbar__logo svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-soft-mint);
+}
+
+/* Nav Links */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.navbar__link {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  position: relative;
+}
+
+.navbar__link:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar__link--active {
+  color: #FFFFFF;
+  background: rgba(104, 194, 164, 0.22);
+  border-bottom: 2px solid var(--color-soft-mint);
+}
+
+.navbar__link .cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  background: var(--color-warm-orange);
+  color: #192421;
+  font-size: 11px;
+  font-weight: 800;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Right Actions */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.navbar__auth-link {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+
+.navbar__auth-link:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar__auth-link--accent {
+  background: var(--color-warm-orange);
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 7px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar__auth-link--accent:hover {
+  background: var(--color-burnt-orange);
+  color: #FFFFFF;
+}
+
+.navbar__admin-link {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.navbar__admin-link:hover {
+  color: #FFFFFF;
+  background: rgba(104, 194, 164, 0.2);
+  border-color: var(--color-soft-mint);
+}
+
+/* Mobile Hamburger */
+.navbar__hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 6px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.navbar__hamburger svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .navbar__hamburger {
+    display: block;
+  }
+
+  .navbar__links,
+  .navbar__actions {
+    display: none;
+  }
+
+  .navbar--open .navbar__menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--color-deep-teal);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+    padding: var(--space-lg);
+    gap: var(--space-sm);
+    z-index: 99;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .navbar--open .navbar__menu .navbar__link,
+  .navbar--open .navbar__menu .navbar__auth-link {
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .navbar--open .navbar__menu .navbar__auth-link--accent {
+    text-align: center;
+    margin-top: var(--space-xs);
+  }
+
+  .navbar--open .navbar__menu .navbar__admin-link {
+    text-align: center;
+    padding: 8px 12px;
+    margin-top: var(--space-xs);
+  }
+}
